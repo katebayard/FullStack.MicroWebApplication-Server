@@ -1,6 +1,8 @@
 package com.example.tcpApp.services;
 
+import com.example.tcpApp.models.Channel;
 import com.example.tcpApp.models.User;
+import com.example.tcpApp.repositories.ChannelRepository;
 import com.example.tcpApp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -14,6 +16,12 @@ public class UserService{
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ChannelRepository channelRepository;
+
+    @Autowired
+    private ChannelService channelService;
 
     public List<User> findAll() {
         return userRepository.findAll();
@@ -34,12 +42,18 @@ public class UserService{
         original.setChannels(updatedUser.getChannels());
         original.setUsername(updatedUser.getUsername());
         original.setMessages(updatedUser.getMessages());
-        userRepository.deleteById(id);
         return userRepository.save(original);
     }
 
     public Boolean delete(Long id) {
         userRepository.deleteById(id);
         return true;
+    }
+
+    public User joinChannel(Long userId, Long channelId){
+        User original = userRepository.getOne(userId);
+        original.getChannels().add(channelRepository.getOne(channelId));
+        channelRepository.getOne(channelId).getUsers().add(original);
+        return userRepository.save(original);
     }
 }
