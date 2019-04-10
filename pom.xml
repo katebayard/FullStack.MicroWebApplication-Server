@@ -42,18 +42,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.auth0/spring-security-auth0 -->
-		<dependency>
-			<groupId>com.auth0</groupId>
-			<artifactId>auth0-spring-security-api</artifactId>
-			<version>1.0.0-rc.3</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.auth0/spring-security-auth0 -->
-		<dependency>
-			<groupId>com.auth0</groupId>
-			<artifactId>spring-security-auth0</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 
 	</dependencies>
 
