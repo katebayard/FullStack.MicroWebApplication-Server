@@ -7,32 +7,32 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="users")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(length = 20)
     private String firstName;
-    @Column(length = 20)
     private String lastName;
-    @Column(nullable = false, length = 30, unique = true)
+    @Column(nullable = false, unique = true)
     private String username;
-    @OneToMany(mappedBy = "sender")
+    /*
+   @OneToMany(mappedBy = "sender")
     private Set<Message> messages = new HashSet<>();
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch =  FetchType.EAGER)
     @JoinTable(
-            name="user_channels",
-            joinColumns = @JoinColumn(name ="user_id"),
+            name="users_channels",
+            joinColumns = @JoinColumn(name ="users_id"),
             inverseJoinColumns = {@JoinColumn(name="channel_id")
             }
     )
     private Set<Channel> channels = new HashSet<>();
-
+*/
     public User() {
     }
-
+/*
     public User(String firstName, String lastName, String username, Set<Message> messages, Set<Channel> channels) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -40,7 +40,7 @@ public class User {
         this.messages = messages;
         this.channels = channels;
     }
-
+*/
     public User(Long id, String firstName, String lastName, String username) {
         this.id = id;
         this.firstName = firstName;
@@ -79,7 +79,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-
+/*
     public Set<Message> getMessages() {
         return messages;
     }
@@ -95,7 +95,7 @@ public class User {
     public void setChannels(Set<Channel> channels) {
         this.channels = channels;
     }
-
+*/
     @Override
     public String toString() {
         return "User{" +
