@@ -10,44 +10,41 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
 
+    @Autowired
     private UserService userService;
 
-    @Autowired
-    public UserController(UserService userService){
-        this.userService = userService;
-    }
-
-    @PostMapping("/users/")
+    @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user){
         return new ResponseEntity<>(userService.create(user), HttpStatus.CREATED);
     }
 
-    @GetMapping("/users/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public ResponseEntity<User> findById(@PathVariable("id") Long id){
         return new ResponseEntity<>(userService.findById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/users/")
+    @GetMapping
     public ResponseEntity<List<User>> findAll(){
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
-
-    @PutMapping("/users/{id}")
+/*
+    @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user){
         return new ResponseEntity<>(userService.update(id, user), HttpStatus.OK);
-    }
+    }*/
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteUser(@PathVariable Long id){
         return new ResponseEntity<>(userService.delete(id), HttpStatus.NOT_FOUND);
     }
-
-    @PutMapping("/users/{id}/joinChannel")
+/*
+    @PutMapping("/{id}/joinChannel")
     public ResponseEntity<User> joinChannel(@PathVariable Long id, @RequestParam Long channelId){
         return new ResponseEntity<>(userService.joinChannel(id, channelId), HttpStatus.OK);
-    }
+    }*/
 
 }
