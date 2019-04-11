@@ -9,12 +9,14 @@
 
         var stompClient = null;
 
+
         function setConnected(connected) {
 
             document.getElementById('connect').disabled = connected;
             document.getElementById('disconnect').disabled = !connected;
             document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
             document.getElementById('response').innerHTML = '';
+            document.getElementById("sender").innerHTML = sessionStorage.currentUser;
         }
 
         function connect() {
@@ -44,8 +46,7 @@
         }
 
         function sendMessage() {
-
-            var from = document.getElementById('sender').value;
+            var from = document.getElementById("sender").innerText;
             var text = document.getElementById('messageContent').value;
             stompClient.send("/app/chat", {}, JSON.stringify({'sender':from, 'messageContent':text}));
         }
@@ -72,7 +73,8 @@
 <div>
 
     <div>
-        <input type="text" id="sender" placeholder="Choose a nickname"/>
+
+        Username: <div id="sender"></div>
     </div>
     <br />
     <div>
