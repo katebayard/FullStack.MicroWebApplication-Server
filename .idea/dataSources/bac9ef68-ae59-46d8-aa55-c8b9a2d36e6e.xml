@@ -1140,33 +1140,152 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="289" parent="17" name="hibernate_sequence"/>
-    <table id="290" parent="17" name="users"/>
-    <column id="291" parent="289" name="next_val">
-      <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="292" parent="290" name="id">
+    <table id="289" parent="17" name="channel_users">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="290" parent="17" name="channels">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="291" parent="17" name="channels_users">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="292" parent="17" name="hibernate_sequence">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="293" parent="17" name="messages">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="294" parent="17" name="users">
+      <Engine>MyISAM</Engine>
+    </table>
+    <column id="295" parent="289" name="channel_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="290" name="first_name">
+    <column id="296" parent="289" name="username">
       <Position>2</Position>
-      <DataType>varchar(40)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="290" name="last_name">
+    <index id="297" parent="289" name="UK_4bq6uadnpd35k7i5qm88mfdn9">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="298" parent="289" name="FKeuxeoqbnymj5mnrh3194g9kbq">
+      <ColNames>channel_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="299" parent="289" name="UK_4bq6uadnpd35k7i5qm88mfdn9">
+      <ColNames>username</ColNames>
+      <UnderlyingIndexName>UK_4bq6uadnpd35k7i5qm88mfdn9</UnderlyingIndexName>
+    </key>
+    <column id="300" parent="290" name="channel_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="301" parent="290" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="302" parent="290" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>channel_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="303" parent="291" name="channel_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="304" parent="291" name="user_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="305" parent="291" name="FKfv0qc2a48kxbbabjhracx1isk">
+      <ColNames>channel_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="306" parent="291" name="FKr6n10gm1idsttlirs807tlon7">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="307" parent="292" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="308" parent="293" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="309" parent="293" name="channel">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="310" parent="293" name="message_content">
       <Position>3</Position>
-      <DataType>varchar(40)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="290" name="username">
+    <column id="311" parent="293" name="sender">
       <Position>4</Position>
-      <DataType>varchar(40)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+    <column id="312" parent="293" name="timestamp">
+      <Position>5</Position>
+      <DataType>datetime|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="313" parent="293" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="314" parent="294" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="294" name="connected">
+      <Position>2</Position>
+      <DataType>bit(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="294" name="first_name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="317" parent="294" name="last_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="318" parent="294" name="username">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="319" parent="294" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
