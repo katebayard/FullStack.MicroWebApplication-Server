@@ -69,7 +69,6 @@
     <orderEntry type="library" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.3.9.Final" level="project" />
     <orderEntry type="library" name="Maven: javax.persistence:javax.persistence-api:2.2" level="project" />
-    <orderEntry type="library" name="Maven: org.javassist:javassist:3.23.1-GA" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.9.12" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.jboss:jandex:2.0.5.Final" level="project" />
@@ -102,5 +101,9 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.1.6.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-websocket:2.1.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:5.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-websocket:5.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.javassist:javassist:3.23.0-GA" level="project" />
   </component>
 </module>

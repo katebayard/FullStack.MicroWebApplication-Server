@@ -1,9 +1,12 @@
 package com.example.tcpApp.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -13,39 +16,25 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private Long id;
     private String firstName;
     private String lastName;
-    @Column(nullable = false, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     private String username;
-    /*
-   @OneToMany(mappedBy = "sender")
-    private Set<Message> messages = new HashSet<>();
-    @ManyToMany(fetch =  FetchType.EAGER)
-    @JoinTable(
-            name="users_channels",
-            joinColumns = @JoinColumn(name ="users_id"),
-            inverseJoinColumns = {@JoinColumn(name="channel_id")
-            }
+    private Boolean connected;
+    @ManyToMany(cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+    })
+    @JoinTable(name = "channels_users",
+            joinColumns = @JoinColumn(name = "channel_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private Set<Channel> channels = new HashSet<>();
-*/
+    private List<Channel> channels = new ArrayList<>();
+
     public User() {
-    }
-/*
-    public User(String firstName, String lastName, String username, Set<Message> messages, Set<Channel> channels) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.messages = messages;
-        this.channels = channels;
-    }
-*/
-    public User(Long id, String firstName, String lastName, String username) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
+        connected = false;
     }
 
     public Long getId() {
@@ -79,30 +68,20 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-/*
-    public Set<Message> getMessages() {
-        return messages;
+
+    public Boolean getConnected() {
+        return connected;
     }
 
-    public void setMessages(Set<Message> messages) {
-        this.messages = messages;
+    public void setConnected(Boolean connected) {
+        this.connected = connected;
     }
 
-    public Set<Channel> getChannels() {
+    public List<Channel> getChannels() {
         return channels;
     }
 
-    public void setChannels(Set<Channel> channels) {
+    public void setChannels(List<Channel> channels) {
         this.channels = channels;
-    }
-*/
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", username='" + username + '\'' +
-                '}';
     }
 }

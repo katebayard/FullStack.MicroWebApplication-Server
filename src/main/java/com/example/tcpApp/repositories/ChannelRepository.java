@@ -1,12 +1,11 @@
 package com.example.tcpApp.repositories;
 
-import com.example.tcpApp.models.User;
+import com.example.tcpApp.models.Channel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface ChannelRepository extends JpaRepository<Channel, Long> {
 
-    User findByUsername(String username);
 
 }
