@@ -1,37 +1,38 @@
 package com.example.tcpApp.services;
 
 import com.example.tcpApp.models.Message;
-import com.example.tcpApp.repositories.MessageRepository;
+import com.example.tcpApp.repositories.MessageRespository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
-@Primary
-public class MessageService{
+public class MessageService {
 
     @Autowired
-    private MessageRepository messageRepository;
+    MessageRespository messageRespository;
 
-    public List<Message> findAll() {
-        return messageRepository.findAll();
+    public Message create(Message message){
+        message.setTimestamp(new Date());
+        return messageRespository.save(message);
+    }
+    public Iterable<Message> findAll(){
+        return messageRespository.findAll();
     }
 
-    public Message findById(Long id) {
-        return messageRepository.getOne(id);
+    public List<Message> findAllByChannel(String channel, Pageable pageable){
+        return messageRespository.findAllByChannel(channel, pageable);
     }
 
-    public Message create(Message message) {
-        return messageRepository.save(message);
+    public List<Message> findBySender(String sender, Pageable pageable){
+        return messageRespository.findBySender(sender, pageable);
     }
 
-    public Message edit(Message message) {
-        return messageRepository.save(message);
-    }
-
-    public void delete(Long id) {
-        messageRepository.deleteById(id);
+    public Boolean delete(Long id){
+        messageRespository.deleteById(id);
+        return true;
     }
 }

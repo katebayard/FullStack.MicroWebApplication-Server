@@ -1,6 +1,7 @@
 package com.example.tcpApp.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -9,41 +10,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="channels")
+@Table(name = "channels")
 public class Channel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    @Column
-    String name;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "channel")
-    List<Message> messages = new ArrayList<>();
-    @JsonIgnore
+    @Column(name = "channel_id")
+    private Long id;
+    @Column(name = "name")
+    private String channelName;
     @ManyToMany(mappedBy = "channels")
-    List<User> users = new ArrayList<>();
+    @JsonIgnore
+    private List<User> users = new ArrayList<>();
 
-    public Channel(){}
-
-    @JsonCreator
-    public Channel(@JsonProperty("name") String name) {
-        this.name = name;
+    public Channel(){
     }
 
-    public Channel(String name, List<Message> messages, List<User> users) {
-        this.name = name;
-        this.messages = messages;
-        this.users = users;
-    }
-
-    @Override
-    public String toString() {
-        return "Channel{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", messages=" + messages +
-              //  ", users=" + users +
-                '}';
+    public Channel(String channelName) {
+        this.channelName = channelName;
     }
 
     public Long getId() {
@@ -54,22 +38,15 @@ public class Channel {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getChannelName() {
+        return channelName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
     }
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
+    @JsonIgnore
     public List<User> getUsers() {
         return users;
     }

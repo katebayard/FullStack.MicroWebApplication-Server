@@ -5,49 +5,67 @@ import com.example.tcpApp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/users")
 public class UserController {
 
+    @Autowired
     private UserService userService;
 
-    @Autowired
-    public UserController(UserService userService){
-        this.userService = userService;
-    }
-
-    @PostMapping("/users/")
-    public ResponseEntity<User> createUser(@RequestBody User user){
+    @PostMapping
+    public ResponseEntity<User> createUser(@RequestBody User user) throws Exception {
         return new ResponseEntity<>(userService.create(user), HttpStatus.CREATED);
     }
 
-    @GetMapping("/users/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id){
+    @GetMapping("/{id}")
+    public ResponseEntity<User> findById(@PathVariable("id") Long id){
         return new ResponseEntity<>(userService.findById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/users/")
+    @GetMapping
     public ResponseEntity<List<User>> findAll(){
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
     }
 
-    @PutMapping("/users/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user){
-        return new ResponseEntity<>(userService.update(id, user), HttpStatus.OK);
+    @GetMapping("/findusername/{username}")
+    public ResponseEntity<User> findByUsername(@PathVariable String username){
+        return new ResponseEntity<>(userService.findByUsername(username), HttpStatus.OK);
     }
 
-    @DeleteMapping("/users/{id}")
+    @PutMapping("/{id}/connect")
+    public ResponseEntity<User> connect(@PathVariable Long id){
+        return new ResponseEntity<>(userService.connect(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}/disconnect")
+    public ResponseEntity<User> disconnect(@PathVariable Long id){
+        return new ResponseEntity<>(userService.disconnect(id), HttpStatus.OK);
+    }
+
+    @PutMapping("/login/{username}")
+    public ResponseEntity<User> login(@PathVariable String username){
+        return new ResponseEntity<>(userService.login(username), HttpStatus.OK);
+    }
+
+    @PutMapping("/logout/{username}")
+    public ResponseEntity<User> logout(@PathVariable String username){
+        return new ResponseEntity<>(userService.logout(username), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteUser(@PathVariable Long id){
         return new ResponseEntity<>(userService.delete(id), HttpStatus.NOT_FOUND);
     }
-
-    @PutMapping("/users/{id}/joinChannel")
+/*
+    @PutMapping("/{id}/joinChannel")
     public ResponseEntity<User> joinChannel(@PathVariable Long id, @RequestParam Long channelId){
         return new ResponseEntity<>(userService.joinChannel(id, channelId), HttpStatus.OK);
     }
-
+*/
 }

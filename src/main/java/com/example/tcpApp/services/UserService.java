@@ -5,23 +5,19 @@ import com.example.tcpApp.models.User;
 import com.example.tcpApp.repositories.ChannelRepository;
 import com.example.tcpApp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@Primary
 public class UserService{
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private ChannelRepository channelRepository;
-
     @Autowired
     private ChannelService channelService;
+    @Autowired
+    private ChannelRepository channelRepository;
 
     public List<User> findAll() {
         return userRepository.findAll();
@@ -31,18 +27,19 @@ public class UserService{
         return userRepository.getOne(id);
     }
 
-    public User create(User user) {
-        return userRepository.save(user);
+    public User findByUsername(String username){
+        return userRepository.findByUsername(username);
     }
 
-    public User update(Long id, User updatedUser) {
-        User original = userRepository.getOne(id);
-        original.setFirstName(updatedUser.getFirstName());
-        original.setLastName(updatedUser.getLastName());
-        original.setChannels(updatedUser.getChannels());
-        original.setUsername(updatedUser.getUsername());
-        original.setMessages(updatedUser.getMessages());
-        return userRepository.save(original);
+    public User create(User user) throws Exception {
+        try {
+            if (userRepository.findByUsername(user.getUsername()) == null) {
+                return userRepository.save(user);
+            }
+            throw new Exception("Username already exists!");
+        } catch (Exception e){
+            return user;
+        }
     }
 
     public Boolean delete(Long id) {
@@ -50,10 +47,35 @@ public class UserService{
         return true;
     }
 
+    public User connect(Long id){
+        User original = userRepository.getOne(id);
+        original.setConnected(true);
+        return userRepository.save(original);
+    }
+
+    public User login(String username){
+       User original = userRepository.findByUsername(username);
+       original.setConnected(true);
+        return userRepository.save(original);
+    }
+
+    public User disconnect(Long id){
+        User original = userRepository.getOne(id);
+        original.setConnected(false);
+        return userRepository.save(original);
+    }
+
+    public User logout(String username){
+        User original = userRepository.findByUsername(username);
+        original.setConnected(false);
+        return userRepository.save(original);
+    }
+
     public User joinChannel(Long userId, Long channelId){
         User original = userRepository.getOne(userId);
-        original.getChannels().add(channelRepository.getOne(channelId));
-        channelRepository.getOne(channelId).getUsers().add(original);
+        Channel channel = channelRepository.getOne(channelId);
+        original.getChannels().add(channel);
+        channelService.addUser(original, channelId);
         return userRepository.save(original);
     }
 }
