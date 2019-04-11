@@ -1,16 +1,19 @@
 package com.example.tcpApp.controllers;
 
+import com.example.tcpApp.models.InputMessage;
 import com.example.tcpApp.models.Message;
+import com.example.tcpApp.models.OutputMessage;
 import com.example.tcpApp.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -48,4 +51,9 @@ public class MessageController {
         return new ResponseEntity<>(messageService.delete(id), HttpStatus.NOT_FOUND);
     }
 
+    @MessageMapping("/chat")
+    @SendTo("/topic/messages")
+    public Message send(Message message) throws Exception {
+        return new Message(message.getChannel(), message.getSender(), new Date(), message.getMessageContent());
+    }
 }

@@ -32,10 +32,14 @@ public class UserService{
     }
 
     public User create(User user) throws Exception {
-        if(userRepository.findByUsername(user.getUsername()) == null) {
-            return userRepository.save(user);
+        try {
+            if (userRepository.findByUsername(user.getUsername()) == null) {
+                return userRepository.save(user);
+            }
+            throw new Exception("Username already exists!");
+        } catch (Exception e){
+            return user;
         }
-        throw new Exception("Username already exists!");
     }
 
     public Boolean delete(Long id) {

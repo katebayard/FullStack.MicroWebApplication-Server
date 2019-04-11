@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Chat WebSocket</title>
+
+    <div>
+        <input type="text" id="firstName" placeholder="First Name"/>
+        <input type="text" id="lastName" placeholder="Last Name"/>
+        <input type="text" id="username" placeholder="Username"/>
+        <input type="button" id="login" name="Login">
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("login").onclick = function () {
+            login();
+            location.href = "/chat.html";
+        };
+    </script>
+
+    <script>
+
+        function login() {
+
+            let http = new XMLHttpRequest();
+
+            var firstNameVal = document.getElementById('firstName').value;
+            var lastNameVal = document.getElementById('lastName').value;
+            var usernameVal = document.getElementById('username').value;
+            let json = JSON.stringify({
+                firstName: firstNameVal,
+                lastName: lastNameVal,
+                username: usernameVal
+            });
+
+            http.open("POST", '/users')
+            http.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            http.send(json);
+
+
+            sessionStorage.setItem('currentUser', document.getElementById('username').value);
+        }
+    </script>
+
+</head>
+
+</html>
