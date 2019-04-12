@@ -6,15 +6,11 @@
         <input type="text" id="firstName" placeholder="First Name"/>
         <input type="text" id="lastName" placeholder="Last Name"/>
         <input type="text" id="username" placeholder="Username"/>
-        <input type="button" id="login" name="Login">
+        <button id="login" onclick="login();">Log in</button>
     </div>
 
-    <script type="text/javascript">
-        document.getElementById("login").onclick = function () {
-            login();
-            location.href = "/chat.html";
-        };
-    </script>
+
+
 
     <script>
 
@@ -36,6 +32,7 @@
             http.send(json);
 
             sessionStorage.setItem('currentUser', document.getElementById('username').value);
+            location.href = "/chat.html";
         }
     </script>
 

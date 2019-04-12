@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Chat WebSocket</title>
-
+</head>
     <script src="./sockjs-0.3.4.js"></script>
     <script src="./stomp.js"></script>
 
@@ -9,6 +9,9 @@
 
         var stompClient = null;
 
+        function onload() {
+            document.getElementById("sender").style.display = "none";
+        }
 
         function setConnected(connected) {
 
@@ -17,9 +20,10 @@
             document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
             document.getElementById('response').innerHTML = '';
             document.getElementById("sender").innerHTML = sessionStorage.currentUser;
+
         }
 
-        function connect() {
+        function connect(){
 
             var socket = new SockJS('/chat');
             stompClient = Stomp.over(socket);
@@ -66,15 +70,15 @@
 
     </script>
 
-</head>
 
-<body onload="disconnect()">
+
+<body onload="disconnect(), onload()">
 
 <div>
 
     <div>
 
-        Username: <div id="sender"></div>
+   <p id="sender"></p>
     </div>
     <br />
     <div>
@@ -88,6 +92,6 @@
         <p id="response"></p>
     </div>
 </div>
-
 </body>
+
 </html>
