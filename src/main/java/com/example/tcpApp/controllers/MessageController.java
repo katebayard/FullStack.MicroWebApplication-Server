@@ -20,6 +20,7 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
 
+
     @PostMapping
     public ResponseEntity<Message> sendMessage(@RequestBody Message message){
         return new ResponseEntity<>(messageService.create(message), HttpStatus.CREATED);
@@ -45,8 +46,8 @@ public class MessageController {
         return new ResponseEntity<>(messageService.delete(id), HttpStatus.NOT_FOUND);
     }
 
-    @MessageMapping("/chat")
-    @SendTo("/topic/messages")
+    @MessageMapping("/message")
+    @SendTo("/topic/reply")
     public Message send(Message message) {
         return sendMessage(message).getBody();
     }
