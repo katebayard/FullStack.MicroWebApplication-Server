@@ -78,4 +78,17 @@ public class UserService{
         channelService.addUser(original, channelId);
         return userRepository.save(original);
     }
+
+    public User joinChannelByName(String username, String channelName){
+        User original = userRepository.findByUsername(username);
+        Channel channel = channelRepository.findByChannelName(channelName);
+        original.getChannels().add(channel);
+        channelService.addUser(original, channel.getId());
+        return userRepository.save(original);
+    }
+
+    public Boolean deleteAll(){
+        userRepository.deleteAll();
+        return true;
+    }
 }

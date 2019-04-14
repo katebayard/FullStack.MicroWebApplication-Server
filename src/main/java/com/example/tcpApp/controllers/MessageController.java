@@ -46,6 +46,11 @@ public class MessageController {
         return new ResponseEntity<>(messageService.delete(id), HttpStatus.NOT_FOUND);
     }
 
+    @DeleteMapping
+    public ResponseEntity<Boolean> deleteAllMessages(){
+        return new ResponseEntity<>(messageService.deleteAll(), HttpStatus.NOT_FOUND);
+    }
+
     @MessageMapping("/message")
     @SendTo("/topic/reply")
     public Message send(Message message) {

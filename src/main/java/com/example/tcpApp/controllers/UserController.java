@@ -62,10 +62,20 @@ public class UserController {
     public ResponseEntity<Boolean> deleteUser(@PathVariable Long id){
         return new ResponseEntity<>(userService.delete(id), HttpStatus.NOT_FOUND);
     }
-/*
+
+    @DeleteMapping
+    public ResponseEntity<Boolean> deleteAllUsers(){
+        return new ResponseEntity<>(userService.deleteAll(), HttpStatus.NOT_FOUND);
+    }
+
     @PutMapping("/{id}/joinChannel")
     public ResponseEntity<User> joinChannel(@PathVariable Long id, @RequestParam Long channelId){
         return new ResponseEntity<>(userService.joinChannel(id, channelId), HttpStatus.OK);
     }
-*/
+
+    @PutMapping("/{username}/join/")
+    public ResponseEntity<User> joinChannel(@PathVariable String username, @RequestParam String channel){
+        return new ResponseEntity<>(userService.joinChannelByName(username, channel), HttpStatus.OK);
+    }
+
 }
