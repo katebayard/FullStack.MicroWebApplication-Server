@@ -1,0 +1,14 @@
+com/example/tcpApp/controllers/ChannelController.class
+com/example/tcpApp/controllers/UserController.class
+com/example/tcpApp/repositories/ChannelRepository.class
+com/example/tcpApp/models/Channel.class
+com/example/tcpApp/repositories/MessageRespository.class
+com/example/tcpApp/services/ChannelService.class
+com/example/tcpApp/services/MessageService.class
+com/example/tcpApp/TcpApplication.class
+com/example/tcpApp/controllers/MessageController.class
+com/example/tcpApp/configurations/WebSocketConfig.class
+com/example/tcpApp/repositories/UserRepository.class
+com/example/tcpApp/models/User.class
+com/example/tcpApp/services/UserService.class
+com/example/tcpApp/models/Message.class
