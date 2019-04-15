@@ -51,9 +51,10 @@ public class MessageController {
         return new ResponseEntity<>(messageService.deleteAll(), HttpStatus.NOT_FOUND);
     }
 
-    @MessageMapping("/message")
+    @MessageMapping("/messages")
     @SendTo("/topic/reply")
-    public Message send(Message message) {
+    public Message send(Message message, @PathVariable String channel) {
         return sendMessage(message).getBody();
     }
+
 }

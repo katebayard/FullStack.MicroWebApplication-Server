@@ -3,6 +3,7 @@ package com.example.tcpApp.controllers;
 import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -36,6 +37,11 @@ public class UserController {
     @GetMapping("/findusername/{username}")
     public ResponseEntity<User> findByUsername(@PathVariable String username){
         return new ResponseEntity<>(userService.findByUsername(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/findByChannel/{channelId}")
+    public ResponseEntity<List<User>> findByChannel(@PathVariable Long channelId, Pageable pageable){
+        return new ResponseEntity<>(userService.findAllByChannels(channelId, pageable), HttpStatus.OK);
     }
 
     @PutMapping("/{id}/connect")
