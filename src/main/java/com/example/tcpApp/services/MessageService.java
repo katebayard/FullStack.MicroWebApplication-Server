@@ -35,4 +35,9 @@ public class MessageService {
         messageRespository.deleteById(id);
         return true;
     }
+
+    public Boolean deleteAll(){
+        messageRespository.deleteAll();
+        return true;
+    }
 }

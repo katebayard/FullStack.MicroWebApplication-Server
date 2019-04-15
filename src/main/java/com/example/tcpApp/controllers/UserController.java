@@ -3,6 +3,7 @@ package com.example.tcpApp.controllers;
 import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -38,6 +39,11 @@ public class UserController {
         return new ResponseEntity<>(userService.findByUsername(username), HttpStatus.OK);
     }
 
+    @GetMapping("/findByChannel/{channelId}")
+    public ResponseEntity<List<User>> findByChannel(@PathVariable Long channelId, Pageable pageable){
+        return new ResponseEntity<>(userService.findAllByChannels(channelId, pageable), HttpStatus.OK);
+    }
+
     @PutMapping("/{id}/connect")
     public ResponseEntity<User> connect(@PathVariable Long id){
         return new ResponseEntity<>(userService.connect(id), HttpStatus.OK);
@@ -62,10 +68,20 @@ public class UserController {
     public ResponseEntity<Boolean> deleteUser(@PathVariable Long id){
         return new ResponseEntity<>(userService.delete(id), HttpStatus.NOT_FOUND);
     }
-/*
+
+    @DeleteMapping
+    public ResponseEntity<Boolean> deleteAllUsers(){
+        return new ResponseEntity<>(userService.deleteAll(), HttpStatus.NOT_FOUND);
+    }
+
     @PutMapping("/{id}/joinChannel")
     public ResponseEntity<User> joinChannel(@PathVariable Long id, @RequestParam Long channelId){
         return new ResponseEntity<>(userService.joinChannel(id, channelId), HttpStatus.OK);
     }
-*/
+
+    @PutMapping("/{username}/join/")
+    public ResponseEntity<User> joinChannel(@PathVariable String username, @RequestParam String channel){
+        return new ResponseEntity<>(userService.joinChannelByName(username, channel), HttpStatus.OK);
+    }
+
 }

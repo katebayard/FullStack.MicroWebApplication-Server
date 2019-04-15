@@ -30,6 +30,11 @@ public class ChannelController {
         return new ResponseEntity<>(channelService.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/getByName/{name}")
+    public ResponseEntity<Channel> findByName(@PathVariable String name){
+        return new ResponseEntity<>(channelService.findByChannelName(name), HttpStatus.OK);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id){
         return new ResponseEntity<>(channelService.delete(id), HttpStatus.NOT_FOUND);

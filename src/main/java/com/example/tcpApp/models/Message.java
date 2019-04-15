@@ -13,7 +13,6 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String channel;
-    // convert to User object?
     private String sender;
     private Date timestamp;
     private String messageContent;

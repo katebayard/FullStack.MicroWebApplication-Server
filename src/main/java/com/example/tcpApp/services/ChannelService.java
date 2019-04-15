@@ -16,6 +16,10 @@ public class ChannelService {
         return channelRepository.save(channel);
     }
 
+    public Channel findByChannelName(String name){
+        return channelRepository.findByChannelName(name);
+    }
+
     public Channel findById(Long id){
         return channelRepository.getOne(id);
     }

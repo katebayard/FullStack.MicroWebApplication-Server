@@ -31,7 +31,7 @@ public class User {
             joinColumns = @JoinColumn(name = "channel_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-    private List<Channel> channels = new ArrayList<>();
+    private Set<Channel> channels = new HashSet<>();
 
     public User() {
         connected = false;
@@ -77,11 +77,10 @@ public class User {
         this.connected = connected;
     }
 
-    public List<Channel> getChannels() {
+    public Set<Channel> getChannels() {
         return channels;
     }
-
-    public void setChannels(List<Channel> channels) {
+    public void setChannels(Set<Channel> channels) {
         this.channels = channels;
     }
 }
