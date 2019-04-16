@@ -16,10 +16,12 @@ import java.util.List;
 @RequestMapping("/messages")
 public class MessageController {
 
-
-    @Autowired
     private MessageService messageService;
 
+    @Autowired
+    public MessageController(MessageService messageService) {
+        this.messageService = messageService;
+    }
 
     @PostMapping
     public ResponseEntity<Message> sendMessage(@RequestBody Message message){
