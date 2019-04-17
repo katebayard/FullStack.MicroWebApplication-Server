@@ -50,8 +50,7 @@ public class UserControllerTest {
                         "    \"lastName\": \"Hughes\",\n" +
                         "    \"username\": \"tonyhughes\"\n" +
                         "}"))
-                .andExpect(status().isCreated())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
+                .andExpect(status().isCreated());
 
         verify(mockUserService, times(1)).create(refEq(user));
         verifyNoMoreInteractions(mockUserService);
