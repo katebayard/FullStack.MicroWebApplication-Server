@@ -84,4 +84,10 @@ public class UserController {
         return new ResponseEntity<>(userService.joinChannelByName(username, channel), HttpStatus.OK);
     }
 
+    @PutMapping("/{username}/leave/")
+    public ResponseEntity<User> leaveChannel(@PathVariable String username, @RequestParam String channel){
+        return new ResponseEntity<>(userService.leaveChannel(username, channel), HttpStatus.OK);
+    }
+
+
 }
