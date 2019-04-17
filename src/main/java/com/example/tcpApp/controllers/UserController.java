@@ -89,4 +89,5 @@ public class UserController {
         return new ResponseEntity<>(userService.leaveChannel(username, channel), HttpStatus.OK);
     }
 
+
 }
