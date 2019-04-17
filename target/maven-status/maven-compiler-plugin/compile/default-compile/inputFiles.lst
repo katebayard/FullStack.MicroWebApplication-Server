@@ -1,0 +1,14 @@
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/repositories/MessageRespository.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/models/User.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/controllers/MessageController.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/repositories/UserRepository.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/controllers/UserController.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/models/Channel.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/configurations/WebSocketConfig.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/controllers/ChannelController.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/TcpApplication.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/models/Message.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/services/UserService.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/repositories/ChannelRepository.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/services/MessageService.java
+/Users/caraeppes/Projects/FullStack.MicroWebApplication-Server/src/main/java/com/example/tcpApp/services/ChannelService.java

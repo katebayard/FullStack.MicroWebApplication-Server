@@ -3,11 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="72b1ce90-c533-4817-9cf5-375a9fe51081" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChannelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChannelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/ChannelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/ChannelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tcpApp/controllers/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tcpApp/controllers/ChannelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tcpApp/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tcpApp/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tcpApp/services/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tcpApp/services/ChannelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/tcpApp/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/tcpApp/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.tcpApp.TcpApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.example.tcpApp.TcpApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.example.tcpApp.TcpApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.example.tcpApp.TcpApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tcpTrial-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/tcpTrial-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tcpTrial-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/tcpTrial-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+  <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/example/tcpApp/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/tcpApp/UserControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/tcpApp/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/tcpApp/UserControllerTest.class" afterDir="false" />
+
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,24 +36,76 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChannelController.java">
           <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="506">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+
             <state relative-caret-position="269">
               <caret line="81" column="34" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="34" />
+
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/ChannelRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="244">
               <caret line="85" selection-start-line="85" selection-end-line="85" />
+
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/ChannelService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-110">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#435#436#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-14">
@@ -46,6 +115,54 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="835">
+              <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="33" selection-start-line="33" selection-end-line="34" />
+              <folding>
+                <element signature="e#1845#1846#0" expanded="true" />
+                <element signature="e#1876#1877#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="90" selection-start-column="90" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Channel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
         <entry file="file://$PROJECT_DIR$/src/test/java/com/example/tcpApp/UserControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="320">
@@ -53,6 +170,7 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
@@ -66,25 +184,90 @@
       </list>
     </option>
   </component>
+
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>send</find>
+      <find>messageme</find>
+      <find>sender</find>
+      <find>from</find>
+      <find>messageCo</find>
+      <find>username</find>
+      <find>clear</find>
+      <find>.listen</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>messageContent</replace>
+    </replaceStrings>
+  </component>
+
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/MessageRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/config/SecurityConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Hello.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/MessageRespository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Users.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/console_1.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/websocket.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/js/stomp.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChatController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/configurations/WebSocketConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/chat.html" />
+        <option value="$PROJECT_DIR$/chat.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/app.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/InputMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/OutputMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/chat.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Channel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/WebSocketController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/configurations/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/ChannelRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/MessageController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/ChannelService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChannelController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/UserService.java" />
+
         <option value="$PROJECT_DIR$/src/test/java/UserControllerTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/tcpApp/UserTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/tcpApp/UserControllerTest.java" />
+
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+
+    <option name="x" value="95" />
+    <option name="y" value="25" />
+    <option name="width" value="1185" />
+    <option name="height" value="723" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+
     <option name="y" value="23" />
     <option name="width" value="1221" />
     <option name="height" value="705" />
+
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -92,8 +275,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,20 +333,41 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tcpApp" type="462c0819:PsiDirectoryNode" />
+
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+
               <item name="services" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="tcpTrial" type="b2602c69:ProjectViewProjectNode" />
               <item name="FullStack.MicroWebApplication-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="tcpApp" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="tcpTrial" type="b2602c69:ProjectViewProjectNode" />
               <item name="FullStack.MicroWebApplication-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="tcpApp" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+
               <item name="test" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="tcpTrial" type="b2602c69:ProjectViewProjectNode" />
@@ -173,19 +375,32 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="tcpApp" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+
             </path>
             <path>
               <item name="tcpTrial" type="b2602c69:ProjectViewProjectNode" />
               <item name="FullStack.MicroWebApplication-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tcpApp" type="462c0819:PsiDirectoryNode" />
+
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -195,6 +410,21 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555508851898" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.tcpApp.models" />
+
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555447467579" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -202,6 +432,13 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.tcpApp" />
+
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -322,9 +559,19 @@
       <created>1555373802021</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+
+      <updated>1554786556702</updated>
+      <workItem from="1554786560363" duration="10258000" />
+      <workItem from="1554931105376" duration="1953000" />
+      <workItem from="1554951241246" duration="64476000" />
+      <workItem from="1555285218233" duration="15487000" />
+      <workItem from="1555420215185" duration="892000" />
+      <workItem from="1555429406789" duration="9975000" />
+
       <updated>1555373802021</updated>
       <workItem from="1555373803401" duration="3784000" />
       <workItem from="1555434523883" duration="11520000" />
+
     </task>
     <servers />
   </component>
@@ -361,6 +608,14 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+
+    <option name="totallyTimeSpent" value="126887000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="95" y="25" width="1185" height="723" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.29126215" />
+
     <option name="totallyTimeSpent" value="15304000" />
   </component>
   <component name="ToolWindowManager">
@@ -368,6 +623,7 @@
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2663274" />
+
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -384,6 +640,17 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
+
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.39969134" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50086653" side_tool="true" weight="0.3287037" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3287037" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3287037" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.3287037" />
+      <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.77623457" />
+
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -391,22 +658,163 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
+
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
+
+      <window_info anchor="right" id="Database" order="6" weight="0.20653133" />
+
       <window_info anchor="right" id="Database" order="6" />
+
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
+
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.29126215" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" sideWeight="0.5011287" side_tool="true" weight="0.3251305" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3287037" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49913344" visible="true" weight="0.34876543" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.39969134" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50086653" side_tool="true" weight="0.3287037" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3287037" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3287037" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.3287037" />
+      <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.77623457" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.49653378" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" weight="0.20653133" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+    </layout-to-restore>
+
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/MessageRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/config/SecurityConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Hello.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Users.java" />
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/messages" />
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/users" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/channels_users/index/FKr6n10gm1idsttlirs807tlon7" />
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/channels_users/index/FKfv0qc2a48kxbbabjhracx1isk" />
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/channels_users" />
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/channels_users.sql" />
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/channel_users" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/stomp.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChatController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/configurations/WebSocketConfiguration.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/app.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/OutputMessage.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/InputMessage.java" />
+    <entry file="file://$PROJECT_DIR$/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/WebSocketController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/sockjs-0.3.4.js" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/chat.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://bac9ef68-ae59-46d8-aa55-c8b9a2d36e6e/schema/tcpip_db/table/channels" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/configurations/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2086#2087#0" expanded="true" />
+            <element signature="e#2139#2140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/MessageRespository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+
     <entry file="file://$PROJECT_DIR$/src/test/java/UserControllerTesst.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -426,6 +834,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="34" column="62" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+
         </state>
       </provider>
     </entry>
@@ -436,6 +845,108 @@
         </state>
       </provider>
     </entry>
+
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvnw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcpApp.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="90" selection-start-column="90" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/Channel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="33" selection-start-line="33" selection-end-line="34" />
+          <folding>
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1876#1877#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/ChannelRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/ChannelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#435#436#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+
     <entry file="file://$PROJECT_DIR$/src/test/java/com/example/tcpApp/TcpApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -447,11 +958,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="85" selection-start-line="85" selection-end-line="85" />
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/services/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="82">
+          <caret line="90" column="54" selection-start-line="90" selection-start-column="54" selection-end-line="90" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/ChannelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/tcpApp/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="835">
+          <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+
         <state relative-caret-position="-14">
           <caret line="63" column="37" lean-forward="true" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
         </state>
@@ -471,12 +1007,75 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring (tcpTrial)|Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>angular</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8.0_201</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>tcpTrial</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>11</last-edited>
