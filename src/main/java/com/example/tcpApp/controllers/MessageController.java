@@ -24,6 +24,7 @@ public class MessageController {
     }
 
     @PostMapping
+    @ResponseBody
     public ResponseEntity<Message> sendMessage(@RequestBody Message message){
         return new ResponseEntity<>(messageService.create(message), HttpStatus.CREATED);
     }
@@ -38,7 +39,7 @@ public class MessageController {
         return new ResponseEntity<>(messageService.findAllByChannel(channel, pageable), HttpStatus.OK);
     }
 
-    @GetMapping("findBySender/{username}")
+    @GetMapping("/findBySender/{username}")
     public  ResponseEntity<List<Message>> findBySender(@PathVariable String username, Pageable pageable){
         return new ResponseEntity<>(messageService.findBySender(username, pageable), HttpStatus.OK);
     }
