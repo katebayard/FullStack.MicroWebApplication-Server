@@ -9,7 +9,7 @@
         <module name="tcpTrial" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
+    <bytecodeTargetLevel>
       <module name="tcpTrial" target="1.8" />
     </bytecodeTargetLevel>
   </component>
