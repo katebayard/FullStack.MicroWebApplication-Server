@@ -5,6 +5,7 @@ import com.example.tcpApp.repositories.ChannelRepository;
 import com.example.tcpApp.repositories.UserRepository;
 import com.example.tcpApp.services.ChannelService;
 import com.example.tcpApp.services.UserService;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,7 +45,8 @@ public class UserServiceTest {
     private List<User> users;
 
     @Before
-    public void setUp() {users = new ArrayList<>();
+    public void setUp() {
+        users = new ArrayList<>();
         user1 = new User();
         user1.setId(1l);
         user1.setFirstName("Ash");
@@ -106,15 +108,38 @@ public class UserServiceTest {
         verifyNoMoreInteractions(userRepositoryMock);
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void testCreateUserUnsuccessful() throws Exception {
         when(userRepositoryMock.findByUsername(user1.getUsername())).thenReturn(user1);
 
-        assertThat(userService.create(user1), is(user1));
+        userService.create(user1);
+    }
 
-        verify(userRepositoryMock, times(1)).findByUsername(user1.getUsername());
+    @Test
+    public void testDelete() {
+        User user3 = new User();
+        user3.setId(3l);
+        users.add(user3);
+
+        assertThat(userService.delete(3l), is(true));
+
+        verify(userRepositoryMock, times(1)).deleteById(3l);
         verifyNoMoreInteractions(userRepositoryMock);
     }
 
+    @Test
+    public void testConnect() {
+        when(userRepositoryMock.getOne(2l)).thenReturn(user2);
+        when(userRepositoryMock.save(user2)).thenReturn(user2);
+
+        assertThat(userService.connect(2l), is(user2));
+
+        Assert.assertTrue(user2.getConnected());
+    }
+
+    @Test
+    public void testLogin() {
+
+    }
 
 }
