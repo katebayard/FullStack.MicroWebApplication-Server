@@ -4,6 +4,7 @@ import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -36,7 +37,7 @@ public class UserControllerTest {
     private UserService mockUserService;
 
     @Test
-    public void testCreateUser() throws Exception {
+    public void testCreateUserSuccessful() throws Exception {
         User user = new User();
         user.setFirstName("Tony");
         user.setLastName("Hughes");
@@ -52,7 +53,28 @@ public class UserControllerTest {
                         "}"))
                 .andExpect(status().isCreated());
 
-        verify(mockUserService, times(1)).create(refEq(user));
+        verify(mockUserService, times(1)).create(Mockito.any(User.class));
+        verifyNoMoreInteractions(mockUserService);
+    }
+
+    @Test
+    public void testCreateUserUnsuccessful() throws Exception {
+        User user = new User();
+        user.setFirstName("Tony");
+        user.setLastName("Hughes");
+        user.setUsername("tonyhughes");
+        when(mockUserService.create(Mockito.any(User.class))).thenThrow(Exception.class);
+
+        mockMvc.perform(post("/users")
+                .contentType(MediaType.APPLICATION_JSON_UTF8_VALUE)
+                .content("{\n" +
+                        "    \"firstName\": \"Tony\",\n" +
+                        "    \"lastName\": \"Hughes\",\n" +
+                        "    \"username\": \"tonyhughes\"\n" +
+                        "}"))
+                .andExpect(status().isConflict());
+
+        verify(mockUserService, times(1)).create(Mockito.any(User.class));
         verifyNoMoreInteractions(mockUserService);
     }
 

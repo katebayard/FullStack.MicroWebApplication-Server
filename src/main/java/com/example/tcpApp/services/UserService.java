@@ -7,6 +7,7 @@ import com.example.tcpApp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -32,14 +33,10 @@ public class UserService {
     }
 
     public User create(User user) throws Exception {
-        try {
             if (userRepository.findByUsername(user.getUsername()) == null) {
                 return userRepository.save(user);
             }
             throw new Exception("Username already exists!");
-        } catch (Exception e) {
-            return user;
-        }
     }
 
     public Boolean delete(Long id) {
@@ -87,13 +84,13 @@ public class UserService {
         return userRepository.save(original);
     }
 
-    public User leaveChannel(String username, String channelName){
+    public User leaveChannel(String username, String channelName) {
         User original = userRepository.findByUsername(username);
         Channel channel = channelRepository.findByChannelName(channelName);
         channelService.removeUser(original, channel.getChannelName());
         Channel channelToRemove = null;
-        for(Channel c: original.getChannels()){
-            if(c.getId() == channel.getId()){
+        for (Channel c : original.getChannels()) {
+            if (c.getId() == channel.getId()) {
                 channelToRemove = c;
             }
         }
