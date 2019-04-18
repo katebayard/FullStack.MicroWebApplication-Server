@@ -3,6 +3,7 @@ package com.example.tcpApp.models;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 
 @Entity
@@ -70,4 +71,31 @@ public class Message {
         this.messageContent = messageContent;
     }
 
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id=" + id +
+                ", channel='" + channel + '\'' +
+                ", sender='" + sender + '\'' +
+                ", timestamp=" + timestamp +
+                ", messageContent='" + messageContent + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Message message = (Message) o;
+        return Objects.equals(id, message.id) &&
+                channel.equals(message.channel) &&
+                sender.equals(message.sender) &&
+                Objects.equals(timestamp, message.timestamp) &&
+                messageContent.equals(message.messageContent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, channel, sender, timestamp, messageContent);
+    }
 }
