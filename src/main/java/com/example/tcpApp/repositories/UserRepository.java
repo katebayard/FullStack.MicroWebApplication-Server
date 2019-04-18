@@ -1,7 +1,6 @@
 package com.example.tcpApp.repositories;
 
 import com.example.tcpApp.models.Channel;
-import com.example.tcpApp.models.Message;
 import com.example.tcpApp.models.User;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

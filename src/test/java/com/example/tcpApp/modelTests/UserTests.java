@@ -1,4 +1,4 @@
-package com.example.tcpApp;
+package com.example.tcpApp.modelTests;
 
 import com.example.tcpApp.models.Channel;
 import com.example.tcpApp.models.User;
@@ -8,12 +8,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import javax.persistence.Entity;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-public class UserTest {
+public class UserTests {
 
     @Test
     public void testClassSignatureAnnotations() {

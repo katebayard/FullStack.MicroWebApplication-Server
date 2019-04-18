@@ -1,9 +1,7 @@
-package com.example.tcpApp;
+package com.example.tcpApp.modelTests;
 
 import com.example.tcpApp.models.Message;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;

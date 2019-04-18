@@ -1,4 +1,4 @@
-package com.example.tcpApp;
+package com.example.tcpApp.serviceTests;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

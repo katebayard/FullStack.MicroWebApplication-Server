@@ -1,4 +1,4 @@
-package com.example.tcpApp;
+package com.example.tcpApp.serviceTests;
 
 import com.example.tcpApp.controllers.MessageController;
 import com.example.tcpApp.models.Message;

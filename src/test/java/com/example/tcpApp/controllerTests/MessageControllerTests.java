@@ -1,9 +1,8 @@
-package com.example.tcpApp;
+package com.example.tcpApp.controllerTests;
 
 
 import com.example.tcpApp.models.Message;
 import com.example.tcpApp.repositories.MessageRespository;
-import com.example.tcpApp.services.MessageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;

@@ -1,4 +1,4 @@
-package com.example.tcpApp;
+package com.example.tcpApp.controllerTests;
 
 import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.UserService;
@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @RunWith(SpringRunner.class)
-public class UserControllerTest {
+public class UserControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
