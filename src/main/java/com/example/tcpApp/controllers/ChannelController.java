@@ -15,9 +15,22 @@ public class ChannelController {
     @Autowired
     private ChannelService channelService;
 
+    @Autowired
+    private Channel defaultChannel;
+
     @PostMapping
     public ResponseEntity<Channel> createChannel(@RequestBody Channel channel) {
         return new ResponseEntity<>(channelService.create(channel), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/default")
+    public ResponseEntity<Channel> createDefaultChannel() {
+        for (Channel channel: findAll().getBody()) {
+            if (channel.getChannelName().equals("Main Channel")) {
+                return new ResponseEntity<>(channel, HttpStatus.CONFLICT);
+            }
+        }
+        return new ResponseEntity<>(channelService.create(defaultChannel), HttpStatus.CREATED);
     }
 
     @GetMapping
