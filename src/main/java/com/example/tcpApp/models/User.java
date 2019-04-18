@@ -83,4 +83,5 @@ public class User {
     public void setChannels(Set<Channel> channels) {
         this.channels = channels;
     }
+
 }
