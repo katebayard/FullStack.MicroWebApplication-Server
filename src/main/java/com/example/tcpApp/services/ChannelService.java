@@ -34,6 +34,12 @@ public class ChannelService {
         return channelRepository.save(original);
     }
 
+    public Channel removeUser(User user, String channel){
+        Channel original = channelRepository.findByChannelName(channel);
+        original.getUsers().remove(user);
+        return channelRepository.save(original);
+    }
+
     public Boolean delete(Long id){
         channelRepository.deleteById(id);
         return true;

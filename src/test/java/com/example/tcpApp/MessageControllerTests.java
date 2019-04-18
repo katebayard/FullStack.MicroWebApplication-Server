@@ -3,6 +3,7 @@ package com.example.tcpApp;
 
 import com.example.tcpApp.models.Message;
 import com.example.tcpApp.repositories.MessageRespository;
+import com.example.tcpApp.services.MessageService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
@@ -22,13 +23,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.core.Is.is;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -48,15 +42,15 @@ public class MessageControllerTests {
         BDDMockito
                 .given(repository.save(expectedMessage))
                 .willReturn(expectedMessage);
-        String expectedContent = "{\"id\":null,\"channel\":\"default\",\"sender\":\"Cara\",\"timestamp\":Thu Apr 17 09:12:30 EDT 3919,\"messageContent\":\"testing\"}";
+        String messageAsJson = "{\"Message\":{\"id\":null,\"channel\":\"default\",\"sender\":\"Cara\",\"timestamp\":\"3919-04-17T13:12:30.000+0000\",\"messageContent\":\"testing\"}}";
+
+        String expectedContent = "[{\"id\":null,\"channel\":\"default\",\"sender\":\"Cara\",\"timestamp\":\"3919-04-17T13:12:30.000+0000\",\"messageContent\":\"testing\"}]";
         this.mvc.perform(MockMvcRequestBuilders
             .post("/messages")
-            .content(expectedContent)
+            .content(messageAsJson)
             .accept(MediaType.APPLICATION_JSON)
             .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().isCreated())
-//                .andExpect(MockMvcResultMatchers.content().string(expectedContent))
-        ;
+                .andExpect(MockMvcResultMatchers.status().isCreated());
     }
 
     @Test
@@ -74,12 +68,14 @@ public class MessageControllerTests {
         BDDMockito
                 .given(repository.findAll())
                 .willReturn(expectedMessages);
+
         String expectedContent = "[{\"id\":null,\"channel\":\"default\",\"sender\":\"Cara\",\"timestamp\":\"3919-04-17T13:12:30.000+0000\",\"messageContent\":\"testing\"}," +
                 "{\"id\":null,\"channel\":\"default\",\"sender\":\"Cara\",\"timestamp\":\"3919-04-17T13:14:20.000+0000\",\"messageContent\":\"testing1\"}," +
                 "{\"id\":null,\"channel\":\"default\",\"sender\":\"Kate\",\"timestamp\":\"3919-04-17T13:15:15.000+0000\",\"messageContent\":\"testing2\"}]";
+
         this.mvc.perform(MockMvcRequestBuilders
                 .get("/messages")
-//                .content(expectedContent)
+                .content(expectedContent)
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.status().isOk())
@@ -112,7 +108,7 @@ public class MessageControllerTests {
 
     @Test
     public void testFindBySender() throws Exception{
-        ///Given
+        //Given
         Message message1 = new Message("default", "Cara", new Date(2019, 03, 17, 9, 12, 30), "testing");
         Message message2 = new Message("default", "Cara", new Date(2019, 03, 17, 9, 14, 20), "testing1");
         Pageable pageable = PageRequest.of(0, 20);
@@ -134,6 +130,35 @@ public class MessageControllerTests {
                 .andExpect(MockMvcResultMatchers.content().string(expectedContent));
     }
 
+    @Test
+    public void testDelete() throws Exception {
+        //Given
+        Message message1 = new Message("default", "Cara", new Date(2019, 03, 17, 9, 12, 30), "testing");
+        Long testId = 101L;
+        message1.setId(testId);
 
+        this.mvc.perform(MockMvcRequestBuilders
+            .delete("/messages/{id}", testId)
+            .accept(MediaType.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
 
+    @Test
+    public void testDeleteAll() throws Exception{//Given
+        Message message1 = new Message("default", "Cara", new Date(2019, 03, 17, 9, 12, 30), "testing");
+        Long testId = 101L;
+        message1.setId(testId);
+
+        this.mvc.perform(MockMvcRequestBuilders
+                .delete("/messages")
+                .accept(MediaType.APPLICATION_JSON)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers.status().isNotFound());
+    }
+
+    @Test
+    public void testSend() {
+
+    }
 }

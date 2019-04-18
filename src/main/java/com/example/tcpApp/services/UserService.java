@@ -87,6 +87,20 @@ public class UserService {
         return userRepository.save(original);
     }
 
+    public User leaveChannel(String username, String channelName){
+        User original = userRepository.findByUsername(username);
+        Channel channel = channelRepository.findByChannelName(channelName);
+        channelService.removeUser(original, channel.getChannelName());
+        Channel channelToRemove = null;
+        for(Channel c: original.getChannels()){
+            if(c.getId() == channel.getId()){
+                channelToRemove = c;
+            }
+        }
+        original.getChannels().remove(channelToRemove);
+        return userRepository.save(original);
+    }
+
     public Boolean deleteAll() {
         userRepository.deleteAll();
         return true;
