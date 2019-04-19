@@ -52,4 +52,13 @@ public class Channel {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+    @Override
+    public String toString() {
+        return "Channel{" +
+                "id=" + id +
+                ", channelName='" + channelName + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }
