@@ -1,6 +1,7 @@
 package com.example.tcpApp.controllers;
 
 import com.example.tcpApp.models.Channel;
+import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.ChannelService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,17 @@ public abstract class ChannelBaseController<T extends Channel> {
     public ResponseEntity<Boolean> delete(@PathVariable Long id){
         return new ResponseEntity<>(channelService.delete(id), HttpStatus.NOT_FOUND);
     }
+
+    @PutMapping("/{id}/addUser")
+    public ResponseEntity<T> addUser(@RequestBody User user, @PathVariable Long id){
+        return new ResponseEntity<>(channelService.addUser(user, id), HttpStatus.OK);
+    }
+
+    @PutMapping("/{channel}/removeUser")
+    public ResponseEntity<T> removeUser(@RequestBody User user, @PathVariable String channel){
+        return new ResponseEntity<>(channelService.removeUser(user, channel), HttpStatus.OK);
+    }
+
 
 
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/privatechannels")
 public class PrivateChannelController extends ChannelBaseController<PrivateChannel> {
-    
+
     @Autowired
     public PrivateChannelController(ChannelService<PrivateChannel> channelService) {
         super(channelService);

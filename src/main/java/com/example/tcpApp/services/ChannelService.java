@@ -9,8 +9,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChannelService<T extends Channel> {
 
-    @Autowired
     private ChannelBaseRepository<T> channelRepository;
+
+    @Autowired
+    public ChannelService(ChannelBaseRepository<T> channelRepository) {
+        this.channelRepository = channelRepository;
+    }
 
     public T create(T channel){
         return channelRepository.save(channel);

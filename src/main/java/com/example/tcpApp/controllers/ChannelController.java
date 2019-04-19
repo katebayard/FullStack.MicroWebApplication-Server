@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/channels")
 public class ChannelController extends ChannelBaseController<Channel> {
@@ -30,4 +31,7 @@ public class ChannelController extends ChannelBaseController<Channel> {
         }
         return new ResponseEntity<>(channelService.create(defaultChannel), HttpStatus.CREATED);
     }
+
 }
+
+
