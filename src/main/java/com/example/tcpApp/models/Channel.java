@@ -10,10 +10,13 @@ import java.util.List;
 @Entity
 @Table(name = "channels")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="channel_type", discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorValue("channel")
 public class Channel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "channel_id")
     private Long id;
     @Column(name = "name")

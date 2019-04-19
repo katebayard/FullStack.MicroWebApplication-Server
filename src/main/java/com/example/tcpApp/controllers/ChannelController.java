@@ -5,22 +5,20 @@ import com.example.tcpApp.services.ChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/channels")
-public class ChannelController {
-
-    @Autowired
-    private ChannelService channelService;
+public class ChannelController extends ChannelBaseController<Channel> {
 
     @Autowired
     private Channel defaultChannel;
 
-    @PostMapping
-    public ResponseEntity<Channel> createChannel(@RequestBody Channel channel) {
-        return new ResponseEntity<>(channelService.create(channel), HttpStatus.CREATED);
+    @Autowired
+    public ChannelController(ChannelService<Channel> channelService) {
+        super(channelService);
     }
 
     @PostMapping("/default")
@@ -32,28 +30,4 @@ public class ChannelController {
         }
         return new ResponseEntity<>(channelService.create(defaultChannel), HttpStatus.CREATED);
     }
-
-    @GetMapping
-    public ResponseEntity<Iterable<Channel>> findAll(){
-        return new ResponseEntity<>(channelService.findAll(), HttpStatus.OK);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Channel> findById(@PathVariable Long id){
-        return new ResponseEntity<>(channelService.findById(id), HttpStatus.OK);
-    }
-
-    @GetMapping("/getByName/{name}")
-    public ResponseEntity<Channel> findByName(@PathVariable String name){
-        return new ResponseEntity<>(channelService.findByChannelName(name), HttpStatus.OK);
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Boolean> delete(@PathVariable Long id){
-        return new ResponseEntity<>(channelService.delete(id), HttpStatus.NOT_FOUND);
-    }
-
-
 }
-
-
