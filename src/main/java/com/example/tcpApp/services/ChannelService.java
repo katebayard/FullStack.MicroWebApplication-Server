@@ -2,44 +2,44 @@ package com.example.tcpApp.services;
 
 import com.example.tcpApp.models.Channel;
 import com.example.tcpApp.models.User;
-import com.example.tcpApp.repositories.ChannelBaseRepository;
+import com.example.tcpApp.repositories.ChannelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ChannelService<T extends Channel> {
+public class ChannelService {
 
-    private ChannelBaseRepository<T> channelRepository;
+    private ChannelRepository channelRepository;
 
     @Autowired
-    public ChannelService(ChannelBaseRepository<T> channelRepository) {
+    public ChannelService(ChannelRepository channelRepository) {
         this.channelRepository = channelRepository;
     }
 
-    public T create(T channel){
+    public Channel create(Channel channel){
         return channelRepository.save(channel);
     }
 
-    public T findByChannelName(String name){
+    public Channel findByChannelName(String name){
         return channelRepository.findByChannelName(name);
     }
 
-    public T findById(Long id){
+    public Channel findById(Long id){
         return channelRepository.getOne(id);
     }
 
-    public Iterable<T> findAll(){
+    public Iterable<Channel> findAll(){
         return channelRepository.findAll();
     }
 
-    public T addUser(User user, Long channelId){
-        T original = channelRepository.getOne(channelId);
+    public Channel addUser(User user, Long channelId){
+        Channel original = channelRepository.getOne(channelId);
         original.getUsers().add(user);
         return channelRepository.save(original);
     }
 
-    public T removeUser(User user, String channel){
-        T original = channelRepository.findByChannelName(channel);
+    public Channel removeUser(User user, String channel){
+        Channel original = channelRepository.findByChannelName(channel);
         original.getUsers().remove(user);
         return channelRepository.save(original);
     }
