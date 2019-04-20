@@ -1,5 +1,6 @@
 package com.example.tcpApp.modelTests;
 
+import com.example.tcpApp.models.BaseChannel;
 import com.example.tcpApp.models.Channel;
 import com.example.tcpApp.models.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -16,6 +17,11 @@ public class ChannelTests {
     @Test
     public void testClassSignatureAnnotations(){
         Assert.assertTrue(Channel.class.isAnnotationPresent(Entity.class));
+    }
+
+    @Test
+    public void testInstanceOf() {
+        Assert.assertTrue(new Channel() instanceof BaseChannel);
     }
 
     @Test

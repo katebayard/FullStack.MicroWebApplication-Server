@@ -1,6 +1,7 @@
 package com.example.tcpApp.controllers;
 
 import com.example.tcpApp.models.PrivateChannel;
+import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.PrivateChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,6 +42,16 @@ public class PrivateChannelController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Long id){
         return new ResponseEntity<>(privateChannelService.delete(id), HttpStatus.NOT_FOUND);
+    }
+
+    @PutMapping("/{id}/addUser")
+    public ResponseEntity<PrivateChannel> addUser(@RequestBody User user, @PathVariable Long id){
+        return new ResponseEntity<>(privateChannelService.addUser(user, id), HttpStatus.OK);
+    }
+
+    @PutMapping("/{channel}/removeUser")
+    public ResponseEntity<PrivateChannel> removeUser(@RequestBody User user, @PathVariable String channel){
+        return new ResponseEntity<>(privateChannelService.removeUser(user, channel), HttpStatus.OK);
     }
 
 }
