@@ -1,6 +1,7 @@
 package com.example.tcpApp.controllers;
 
 import com.example.tcpApp.models.Channel;
+import com.example.tcpApp.models.User;
 import com.example.tcpApp.services.ChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,24 @@ import org.springframework.web.bind.annotation.*;
 public class ChannelController {
 
     @Autowired
+    private Channel defaultChannel;
+
     private ChannelService channelService;
+
+    @Autowired
+    public ChannelController(ChannelService channelService) {
+        this.channelService = channelService;
+    }
+
+    @PostMapping("/default")
+    public ResponseEntity<Channel> createDefaultChannel() {
+        for (Channel channel: findAll().getBody()) {
+            if (channel.getChannelName().equals("Main Channel")) {
+                return new ResponseEntity<>(channel, HttpStatus.CONFLICT);
+            }
+        }
+        return new ResponseEntity<>(channelService.create(defaultChannel), HttpStatus.CREATED);
+    }
 
     @PostMapping
     public ResponseEntity<Channel> createChannel(@RequestBody Channel channel) {
@@ -40,7 +58,15 @@ public class ChannelController {
         return new ResponseEntity<>(channelService.delete(id), HttpStatus.NOT_FOUND);
     }
 
+    @PutMapping("/{id}/addUser")
+    public ResponseEntity<Channel> addUser(@RequestBody User user, @PathVariable Long id){
+        return new ResponseEntity<>(channelService.addUser(user, id), HttpStatus.OK);
+    }
 
+    @PutMapping("/{channel}/removeUser")
+    public ResponseEntity<Channel> removeUser(@RequestBody User user, @PathVariable String channel){
+        return new ResponseEntity<>(channelService.removeUser(user, channel), HttpStatus.OK);
+    }
 }
 
 

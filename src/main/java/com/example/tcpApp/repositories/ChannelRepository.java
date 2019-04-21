@@ -8,5 +8,4 @@ import org.springframework.stereotype.Repository;
 public interface ChannelRepository extends JpaRepository<Channel, Long> {
 
     Channel findByChannelName(String channelName);
-
 }
